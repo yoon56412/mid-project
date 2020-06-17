@@ -1,4 +1,4 @@
 /******
-      Three.js 를 통하여 지구 만들기 
+      Rendering the Earth using Three.js 
  
                                                ******/
