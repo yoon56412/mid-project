@@ -18,6 +18,7 @@ window.onload = function init() {
 	var light = new THREE.DirectionalLight(0xffffff, 1); //빛 만들기 
 	light.position.set(3,0,3);
 	scene.add(light);
+	
 //지구 만들기 
 	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var meterial = new THREE.MeshPhongMaterial();
@@ -29,6 +30,7 @@ window.onload = function init() {
 
     var sphere = new THREE.Mesh(geometry, meterial); //구 만들기(지구)
 	scene.add(sphere)
+
 //구름 만들기 
 	var geometry1 = new THREE.SphereGeometry(0.5, 32, 32);
 	var meterial1 = new THREE.MeshPhongMaterial();
@@ -38,7 +40,7 @@ window.onload = function init() {
 		meterial1.transparent = true;
 		meterial1.depthWrite = false;
 		
-    var clouds = new THREE.Mesh(geometry1, meterial1);
+    var clouds = new THREE.Mesh(geometry1, meterial1); //구 만들기(구름)
 	scene.add(clouds)
 
 	var controls = new THREE.TrackballControls(camera, webglEl);

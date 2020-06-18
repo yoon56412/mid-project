@@ -18,11 +18,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	this.zoomCamera = function () {
 
-			var factor = 1.0 + ( endzoom.y - startzoom.y ) * this.zoomSpeed; //멈춘지점에서 시작지점을 빼고 속도를 곱해 준다.
-            //factor에 +1을 하는 이유는 multiplyScalar를 사용하기 때문에 움직임이 없어도 곱할 수 있게 하기 위해서이다. 
+			var factor = 1.0 + ( endzoom.y - startzoom.y ) * this.zoomSpeed; 
 			if ( factor !== 1.0 && factor > 0.0 ) {
 
-				eye.multiplyScalar( factor ); //eye 벡터에 factor값을 곱해준다. 
+				eye.multiplyScalar( factor ); 
 
 				if ( this.staticMoving ) {
 
@@ -30,7 +29,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 				} else { 
 
-					startzoom.y += ( endzoom.y - startzoom.y ) * this.dynamicDampingFactor; //this.dynamicDampingFactor은 화면이 줌이 될 때 튕기는 효과를 준다. 
+					startzoom.y += ( endzoom.y - startzoom.y ) * this.dynamicDampingFactor; 
 
 				}
 
@@ -45,9 +44,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		this.zoomCamera();
 
-		this.object.position.addVectors( this.target, eye ); //객체의 위치 설정 
+		this.object.position.addVectors( this.target, eye ); 
 
-		this.object.lookAt( this.target );  //earth.js 속 카메라가 계속 타겟을 볼 수 있도록 설정 
+		this.object.lookAt( this.target ); 
 
 
 	};
